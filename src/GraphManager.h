@@ -83,6 +83,15 @@ public:
 		}
 	}
 
+	double DistanceTo(GraphNode* Node)
+	{
+		for (auto Neighbor : m_Neighbors)
+			if (Node == Neighbor.Destination)
+				return Neighbor.Cost;
+
+		return 0;
+	}
+
 	Vector2u GetPosition() const
 	{
 		return m_Position;
