@@ -5,19 +5,26 @@
 #ifndef PLANETS2_PLANET_H
 #define PLANETS2_PLANET_H
 
+#include <vector>
 #include <iostream>
-#include "GraphManager.h"
+#include "Ore.h"
 
 class GraphNode;
 
 class Planet
 {
     uint m_id;
-	GraphNode* m_GraphNode;
-public:
-	GraphNode* GetGraphNode() const;
+    GraphNode* m_GraphNode;
+    OreMap m_OrePrices;
 
-	Planet(uint id, GraphNode *Node);
+public:
+    GraphNode* GetGraphNode() const;
+
+    uint GetOrePrice(Ore ore) const;
+    OreMap GetOrePrices() const;
+
+
+    Planet(uint id, GraphNode *Node);
     friend std::ostream& operator<<(std::ostream&, Planet&);
 };
 

@@ -3,7 +3,7 @@
 //
 
 #include "Ship.h"
-
+#include "GraphManager.h"
 void Ship::SetDestination(Planet *Destination)
 {
     m_Path = m_PathCallback(m_Path.front()->GetGraphNode(), Destination->GetGraphNode());

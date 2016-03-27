@@ -15,6 +15,6 @@ set(SOURCE_FILES
     src/GraphManager.h
     src/Main.cpp
     src/Planet.cpp
-    src/Planet.h src/Ore.cpp src/Ore.h src/Ship.cpp src/Ship.h)
+    src/Planet.h src/Ore.cpp src/Ore.h src/Ship.cpp src/Ship.h src/GraphManager.cpp)
 
 add_executable(Planets ${SOURCE_FILES})

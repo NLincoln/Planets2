@@ -7,6 +7,7 @@
 
 
 #include <queue>
+#include <functional>
 #include "Planet.h"
 
 class Ship
@@ -14,6 +15,8 @@ class Ship
     std::vector<Planet*> m_Path;
     double m_TimeToTarget;
     std::function<std::vector<Planet*>(GraphNode*, GraphNode*)> m_PathCallback;
+
+    OreMap m_CargoHold;
 
 public:
     void Tick();
