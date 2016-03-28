@@ -36,7 +36,7 @@ int main(int argc, const char** argv)
     std::vector<Ship> ShipList;
     for (uint i = 0; i < NUM_SHIPS; ++i)
     {
-        ShipList.emplace_back(PlanetList[GetRandom(0, NUM_PLANETS)], [&] (GraphNode* Start, GraphNode* End)
+        ShipList.emplace_back(i, PlanetList[GetRandom(0, NUM_PLANETS)], [&] (GraphNode* Start, GraphNode* End)
         {
             auto GraphList = GraphManager.FindPath(Start, End);
             std::vector<Planet*> Result;
@@ -49,7 +49,7 @@ int main(int argc, const char** argv)
     }
 
     for (auto& Ship : ShipList)
-        Ship.Tick();
+        Ship.Tick(PlanetList);
 
     return 0;
 }

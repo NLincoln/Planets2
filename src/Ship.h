@@ -12,6 +12,8 @@
 
 class Ship
 {
+    uint m_id;
+
     std::vector<Planet*> m_Path;
     double m_TimeToTarget;
     std::function<std::vector<Planet*>(GraphNode*, GraphNode*)> m_PathCallback;
@@ -19,10 +21,10 @@ class Ship
     OreMap m_CargoHold;
 
 public:
-    void Tick();
+    void Tick(std::vector<Planet*> PlanetList);
 
     void SetDestination(Planet *Destination);
-    Ship(Planet* Start, std::function<std::vector<Planet*>(GraphNode*, GraphNode*)>  Callback);
+    Ship(uint id, Planet* Start, std::function<std::vector<Planet*>(GraphNode*, GraphNode*)>  Callback);
 };
 
 

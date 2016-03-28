@@ -3,6 +3,7 @@
 //
 
 #include "Planet.h"
+#include "Common.h"
 
 
 Planet::Planet(uint id, GraphNode* Node)
@@ -10,6 +11,11 @@ Planet::Planet(uint id, GraphNode* Node)
     m_id = id;
     m_GraphNode = Node;
     m_OrePrices = OreMapFactory();
+
+    for (auto& ore : m_OrePrices)
+    {
+        ore.second = GetRandom(0, 100);
+    }
 }
 
 GraphNode* Planet::GetGraphNode() const
